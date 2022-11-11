@@ -8,8 +8,8 @@ int main(){
 
     for (int i=0;i<4;i++){
         current_term = numberArray[i] = current_term + 9*pow(10, i);
+    printf("%d \n",numberArray[i]);
     }
-        printf("%d \n",numberArray[3]);
     return 0;
     getch();
 }
