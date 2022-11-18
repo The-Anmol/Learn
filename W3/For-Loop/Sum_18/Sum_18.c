@@ -16,8 +16,8 @@ int factorial(int num){
 // }
 
 void main(){
-    int terms, number,single_term=0;
-    float sum = 0;
+    int terms,number;
+    float sum = 0,single_term=0,temp;
 
     printf("Enter the value of X: ");
     scanf("%d",&number);
@@ -25,13 +25,11 @@ void main(){
     printf("Enter the number of terms of Series: ");
     scanf("%d",&terms);
 
-    for (int i=2;i<terms;i=i+2) {
-        // sum = single_term + pow(number,i)/factorial(i);
-        // single_term = pow(number,i)/factorial(i);
-        // printf("number=%d, i=%d, then factoiral is =%d\n",number, factorial(number));
-        printf("%f %d", pow(number, i), factorial(i));
+    for (int i=2;i<terms;i=i+2){
+        temp = pow(number,i)/factorial(i);
+        sum = single_term + temp;
+        single_term = temp;
+        printf("%f = pow(%d,%d)/factorial(%d) \n",single_term,number,i,i);
     }
-    // printf("%d", factorial(number));
-    // printf("The Sum is =%f",sum);
+    printf("The Sum is = %f",1-sum);
 }
-

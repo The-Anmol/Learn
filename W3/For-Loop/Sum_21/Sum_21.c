@@ -1,15 +1,29 @@
+// Problem
+// Write a program in C to display the sum of the series [ 9 + 99 + 999 + 9999 ...]. 
+
+// Done
+
 #include <stdio.h>
 #include <conio.h>
 #include <math.h>
 
-int main(){
-    int terms,number=9,current_term=0;
-    int numberArray[] = {};
+void main(){
+    int terms;
+    float number,current_term,sum = 0;
+    float numberArray[20] = {};
 
-    for (int i=0;i<4;i++){
-        current_term = numberArray[i] = current_term + 9*pow(10, i);
-    printf("%d \n",numberArray[i]);
+    printf("Enter the value of x for the series  [ x + xx + xxx + xxxx ...]: ");
+    scanf("%f", &number);
+
+    printf("Enter the number of terms of the series  [ x + xx + xxx + xxxx ...]: ");
+    scanf("%d", &terms);
+
+    for (int i=0;i<terms;i++){
+        printf("%f\n", current_term + number*pow(10, i));
+        numberArray[i] = current_term + number*pow(10, i);
+        current_term =  current_term +  number*pow(10, i);
+        // printf("%f \n",numberArray[i]);
+        sum = sum + numberArray[i];
     }
-    return 0;
-    getch();
+    printf("The sum of the series is = %f", sum);
 }
